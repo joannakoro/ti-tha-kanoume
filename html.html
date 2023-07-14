@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Τι θα κάνουμε σήμερα;</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url('image.jpg');
+            background-size: calc(100% - 40px);
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 10%;
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            padding: 5%;
+            padding-top: 0.5%;
+            background-color: rgba(197, 179, 179, 0.8);
+        }
+
+        #content-container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #7a3013;
+        }
+
+        #result-label {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function selectRandomString() {
+            var strings = [
+                "Πεζοπορία","Καφέ","Παγωτό","Netflix","Μαγείρεμα μαζί","Σεξ","Φαγητό στης Ιωάννας","Φαγητό στου Γιάννη","Ποτό","Σουβλάκια","Κρέπα",
+                "Πίτσα", "Κινέζικο", "Playstation"
+            ];
+
+            var selectedString = strings[Math.floor(Math.random() * strings.length)];
+            return selectedString.trim();
+        }
+
+        function generateRandomString() {
+            var randomString = selectRandomString();
+            document.getElementById('result-label').textContent = randomString;
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="content-container">
+            <h1>Tι θα κάνουμε σήμερα;</h1>
+            <button onclick="generateRandomString()">Πάτα με!</button>
+            <p id="result-label"></p>
+        </div>
+    </div>
+</body>
+</html>
