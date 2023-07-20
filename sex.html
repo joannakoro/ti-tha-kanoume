@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Photo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        #photo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 80vh;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        #button-container {
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #ec0202;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #9b0505;
+        }
+    </style>
+    <script>
+        function showRandomPhoto() {
+            var imageCount = 5; // Set the total number of images in the "images" folder
+            var randomIndex = Math.floor(Math.random() * imageCount) + 1;
+            var imagePath = "images/image" + randomIndex + ".jpg"; // Assuming your images are named as "image1.jpg", "image2.jpg", and so on.
+
+            var imgElement = document.getElementById("random-image");
+            imgElement.src = imagePath;
+        }
+
+        // Function to set the first photo on page load
+        function setFirstPhoto() {
+            var firstImagePath = "picture.jpg"; // Replace "picture.img" with the actual path of your first photo
+            var imgElement = document.getElementById("random-image");
+            imgElement.src = firstImagePath;
+        }
+    </script>
+</head>
+<body onload="setFirstPhoto()">
+    <div id="photo-container">
+        <img id="random-image" src="images/image1.jpg" alt="Random Photo">
+    </div>
+    <div id="button-container">
+        <button onclick="showRandomPhoto()">Άλλη Στάση</button>
+    </div>
+</body>
+</html>
