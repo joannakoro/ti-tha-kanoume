@@ -47,23 +47,16 @@
     </style>
     <script>
         function showRandomPhoto() {
-            var imageCount = 5; // Set the total number of images in the "images" folder
+            var imageCount = 30; // Set the total number of images in the "images" folder
             var randomIndex = Math.floor(Math.random() * imageCount) + 1;
             var imagePath = "images/image" + randomIndex + ".jpg"; // Assuming your images are named as "image1.jpg", "image2.jpg", and so on.
 
             var imgElement = document.getElementById("random-image");
             imgElement.src = imagePath;
         }
-
-        // Function to set the first photo on page load
-        function setFirstPhoto() {
-            var firstImagePath = "picture.jpg"; // Replace "picture.img" with the actual path of your first photo
-            var imgElement = document.getElementById("random-image");
-            imgElement.src = firstImagePath;
-        }
     </script>
 </head>
-<body onload="setFirstPhoto()">
+<body>
     <div id="photo-container">
         <img id="random-image" src="images/image1.jpg" alt="Random Photo">
     </div>
