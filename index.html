@@ -8,6 +8,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            background-image: url('image.jpg');
             background-size: calc(100% - 40px);
             background-position: center;
             background-repeat: no-repeat;
@@ -57,8 +58,8 @@
     <script>
         function selectRandomString() {
             var strings = [
-                "Βόλτα και περπάτημα","Καφέ","Παγωτό","Netflix","Μαγείρεμα μαζί","Σεξ","Φαγητό στης Ιωάννας","Φαγητό στου Γιάννη","Ποτό","Σουβλάκια","Κρέπα",
-                "Πίτσα", "Κινέζικο", "Playstation","Ρούμι με Ανανά"
+                "Πεζοπορία", "Καφέ", "Παγωτό", "Netflix", "Μαγείρεμα μαζί", "Σεξ", "Φαγητό στης Ιωάννας", "Φαγητό στου Γιάννη", "Ποτό", "Σουβλάκια", "Κρέπα",
+                "Πίτσα", "Κινέζικο", "Playstation"
             ];
 
             var selectedString = strings[Math.floor(Math.random() * strings.length)];
@@ -68,7 +69,21 @@
         function generateRandomString() {
             var randomString = selectRandomString();
             document.getElementById('result-label').textContent = randomString;
+
+            if (randomString === "Σεξ") {
+                // Create a new button element
+                var newButton = document.createElement("button");
+                newButton.textContent = "Ωπ για έλα εδώ...";
+                newButton.onclick = redirectToSexPage; // Redirect to sex.html
+                document.getElementById('content-container').appendChild(newButton);
+            }
         }
+
+        function redirectToSexPage() {
+            // Redirect the user to sex.html
+            window.location.href = "sex.html";
+        }
+        
     </script>
 </head>
 <body>
